@@ -1,0 +1,47 @@
+﻿@model AvaliacaoDev_GGP.Models.Produto
+
+@{
+    ViewBag.Title = "Cadastro de Produto";
+}
+
+<h2>Excluir Produto</h2>
+
+<h3>Você tem certeza que deseja excluir esse produto?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qtd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qtd)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /><br /><br />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
